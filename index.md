@@ -25,13 +25,25 @@ title: "首页"
 4. **开源项目实践**
    - 将所学应用于实际项目
 
+## 📂 分类浏览
+
+### 按学习内容分类
+- [C++学习笔记](/categories/cpp/) - 系统复习C++
+- [算法刷题](/categories/algorithm/) - LeetCode每日题解
+- [计算机科学](/categories/cs/) - 理论基础学习
+- [开源项目](/categories/open-source/) - 项目实践记录
+
+### 快速标签
+- [C++](/tags/c++/) [算法](/tags/algorithm/) [数据结构](/tags/数据结构/)
+- [开源](/tags/开源/) [项目](/tags/项目/) [Git](/tags/git/)
+
 ## 📝 最新文章
 
-{% for post in site.posts limit:5 %}
+{% for post in site.posts limit:10 %}
 - [{{ post.title }}]({{ post.url }}) ({{ post.date | date: "%Y-%m-%d" }})
 {% endfor %}
 
-[查看所有文章](archive.html)
+[查看所有文章](/archive.html) | [查看所有分类](/categories/) | [关于我](/about.html)
 
 ## 🔗 快速链接
 
@@ -41,5 +53,5 @@ title: "首页"
 
 ---
 
-**名言警句：**  
-"学习如逆水行舟，不进则退"
+**学习格言**：  
+"Talk is cheap, show me the code. - Linus Torvalds"

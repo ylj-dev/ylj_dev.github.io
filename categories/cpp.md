@@ -1,24 +1,21 @@
 ---
-layout: category
+layout: page
 title: "C++学习笔记"
-category: cpp
 permalink: /categories/cpp/
 ---
 
-这里记录了我的C++学习笔记，从基础语法到高级特性。
+# C++学习笔记
 
-## 学习路线
+## 学习路线图
+1. **基础阶段** - 语法、数据类型、控制流
+2. **核心阶段** - 面向对象、模板、STL
+3. **进阶阶段** - 现代C++、多线程、网络编程
 
-1. 基础语法和类型系统
-2. 面向对象编程
-3. 模板和泛型编程
-4. STL和现代C++
-5. 多线程和并发
-6. 网络编程
-7. 性能优化
-
-## 相关文章
-
+## 文章列表
 {% for post in site.categories.cpp %}
 - [{{ post.title }}]({{ post.url }}) - {{ post.date | date: "%Y-%m-%d" }}
 {% endfor %}
+
+---
+
+[查看所有分类](/categories/) | [返回首页](/)
