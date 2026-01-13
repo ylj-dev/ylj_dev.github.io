@@ -375,61 +375,69 @@ excerpt: "记录我作为游戏服务器开发者开始C++学习计划的过程"
 
    ```bash
    # 创建 index.md
-     cat > index.md << 'EOF'
-     ---
-     layout: default
-     title: "首页"
-     ---
+   cat > index.md << 'EOF'
+   ---
+   layout: default
+   title: "首页"
+   ---
    
-     # 欢迎来到我的学习博客！
+   # 欢迎来到我的学习博客！👨‍💻
    
-     我是ylj，一名游戏服务器开发工程师，正在系统学习：
+   我是 **ylj**，一名专注于 **C++ 游戏服务器后端开发** 的工程师。这里是我系统学习、沉淀知识的地方。
    
-     ## 📚 学习计划
+   ## 📝 最新文章
    
-     1. **C++基础知识复习**（目标：炉火纯青）
-        - 基础语法 -> 面向对象 -> 模板 -> 现代C++
-        - 每章写总结笔记
+   {% for post in site.posts limit:5 %}
+   - **【{{ post.categories | first }}】** [{{ post.title }}]({{ post.url }}) - <small>{{ post.date | date: "%Y-%m-%d" }}</small>
+   {% if post.excerpt %}  *{{ post.excerpt | strip_html | truncate: 100 }}* {% endif %}
+   {% endfor %}
    
-     2. **LeetCode刷题**（目标：熟练算法）
-        - 跟随代码随想录
-        - 参加周赛锻炼
-        - 每题写题解
+   [查看所有文章归档...](/archive.html)
    
-     3. **计算机科学概论学习**
-        - 系统阅读经典书籍
-        - 记录核心概念
+   ---
    
-     4. **开源项目实践**
-        - 将所学应用于实际项目
+   ## 🎯 我的核心学习路径
    
-     ## 📂 分类浏览
+   | 目标 | 关键行动 | 产出 |
+   | :--- | :--- | :--- |
+   | **C++ 精通** | 基础→面向对象→STL→现代C++→项目实践 | 系列笔记、开源项目 |
+   | **算法提升** | 跟随《代码随想录》，每日刷题，参加周赛 | LeetCode 题解、竞赛总结 |
+   | **CS 基础巩固** | 精读《计算机科学概论》等经典 | 核心概念笔记、体系理解 |
+   | **工程能力** | 设计并实现一个 C++ 游戏服务器框架 | 开源项目、架构文档 |
    
-     ### 按学习内容分类
-     - [C++学习笔记](/categories/cpp/) - 系统复习C++
-     - [算法刷题](/categories/algorithm/) - LeetCode每日题解
-     - [计算机科学](/categories/cs/) - 理论基础学习
-     - [开源项目](/categories/open-source/) - 项目实践记录
+   ---
    
-     ## 📝 最新文章
+   ## 📚 按主题探索
    
-     {% for post in site.posts limit:10 %}
-     - [{{ post.title }}]({{ post.url }}) ({{ post.date | date: "%Y-%m-%d" }})
-     {% endfor %}
+   <div class="category-grid">
+   <a href="/categories/cpp/" class="category-card">
+   <h3>C++ 学习笔记</h3>
+   <p>从语法到工程实践的系统复习</p>
+   </a>
+   <a href="/categories/algorithm/" class="category-card">
+   <h3>算法刷题</h3>
+   <p>LeetCode 题解与竞赛心得</p>
+   </a>
+   <a href="/categories/cs/" class="category-card">
+   <h3>计算机科学</h3>
+   <p>操作系统、网络等理论基础</p>
+   </a>
+   <a href="/categories/open-source/" class="project-card"> <!-- 特殊样式突出项目 -->
+   <h3>开源项目</h3>
+   <p>MiniGameServer 及更多实践</p>
+   </a>
+   </div>
    
-     [查看所有文章](/archive.html) | [查看所有分类](/categories/) | [关于我](/about.html)
+   ---
    
-     ## 🔗 快速链接
+   ## 🔗 关于 & 联系
    
-     - [GitHub主页](https://github.com/ylj-dev)
-     - [LeetCode主页](https://leetcode.cn/u/ylj-v/)  # 如果有的话
-     - [关于我](about.md)
+   - **关于我**：[了解更多我的故事](/about.html)
+   - **代码仓库**：[GitHub @ylj-dev](https://github.com/ylj-dev)
+   - **算法练习**：[LeetCode 主页](https://leetcode.cn/u/ylj-v/)
    
-     ---
-   
-     **学习格言**：  
-     "Talk is cheap, show me the code. - Linus Torvalds"
-     EOF
+   > **“Talk is cheap. Show me the code.”** — Linus Torvalds
+   EOF
    ```
 
 5. **创建归档页面**
@@ -619,6 +627,37 @@ categories: [cs]
 
 
 **这样博客就能很好地组织和展示自己的学习进展了！**
+
+### **启用预制的工作流**
+
+- **问题：**
+
+  ​	https://github.com/ylj-dev/ylj-dev.github.io/actions
+
+  ​	本地提交已经推送到GitHub，但自动构建流程就是没有启动（workflow runs列表没有更新），博客页面状态没有更新。
+
+- **原因：**
+
+  ​	https://github.com/ylj-dev/ylj-dev.github.io/settings/pages
+
+  ​	GitHub Pages 当前可能没有启用一个明确的、自动化的构建工作流。页面上“**Use a suggested workflow...**”（使用推荐的工作流...）这句话是一个重要	提示。它意味着你的仓库目前可能处于一种“待配置”状态，依赖GitHub的后台服务进行构建，而这个服务的触发有时不灵敏。
+
+- **解决方案：启用预制的工作流**
+
+  ​	https://github.com/ylj-dev/ylj-dev.github.io/settings/pages
+
+  1. **找到预制工作流：**
+     在你截图页面中部的 “**Build and deployment**” 部分，找到名为 **“GitHub Pages Jekyll”** 的卡片。
+  2. **点击配置按钮：**
+     点击该卡片右下角的 **“Configure”**（配置）按钮。
+  3. **提交工作流文件：**
+     点击后，GitHub 会自动跳转到创建 `.github/workflows/jekyll.yml` 文件的页面。你无需修改代码，**直接滑动到页面底部**，点击绿色的 **“Commit changes...”** 按钮，然后选择 **“Commit directly to the main branch”**，最后确认提交。
+
+  **这个操作的作用是**：它会为你的仓库创建一个标准的、由 GitHub Actions 驱动的 Jekyll 构建流程。之后，每次向 `main` 分支的推送都会可靠地触发一次完整的构建，并在 Actions 页面留下清晰记录。
+
+
+
+**完成标志**：前往 Actions 页面(`https://github.com/ylj-dev/ylj-dev.github.io/actions`)。会看到一个新的工作流（可能是 `jekyll` 或 `pages-build-deployment`）立刻开始运行，构建成功后访问博客网站查看所有更新是否已生效。
 
 
 

@@ -54,8 +54,8 @@ title: "首页"
 
 ## 🔗 关于 & 联系
 
-- **📖 关于我**：[了解更多我的故事](/about.html)
-- **💻 代码仓库**：[GitHub @ylj-dev](https://github.com/ylj-dev)
-- **🧠 算法练习**：[LeetCode 主页](https://leetcode.cn/u/ylj-v/)
+- **关于我**：[了解更多我的故事](/about.html)
+- **代码仓库**：[GitHub @ylj-dev](https://github.com/ylj-dev)
+- **算法练习**：[LeetCode 主页](https://leetcode.cn/u/ylj-v/)
 
 > **“Talk is cheap. Show me the code.”** — Linus Torvalds
