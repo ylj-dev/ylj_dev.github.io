@@ -239,7 +239,6 @@ excerpt: "记录我作为游戏服务器开发者开始C++学习计划的过程"
 2. **创建分类目录页面**
 
    {% raw %}
-
    ```bash
    cat > categories.md << "EOF"
    ---
@@ -262,13 +261,11 @@ excerpt: "记录我作为游戏服务器开发者开始C++学习计划的过程"
    [返回首页](/)
    EOF
    ```
-
    {% endraw %}
 
 3. **创建分类文件夹和页面**
 
    {% raw %}
-
    ```bash
    mkdir -p categories
    
@@ -376,13 +373,11 @@ excerpt: "记录我作为游戏服务器开发者开始C++学习计划的过程"
    [查看所有分类](/categories/) | [返回首页](/)
    EOF
    ```
-
    {% endraw %}
 
 4. **创建首页（添加分类链接）**
 
    {% raw %}
-
    ```bash
    # 创建 index.md
    cat > index.md << 'EOF'
@@ -449,13 +444,11 @@ excerpt: "记录我作为游戏服务器开发者开始C++学习计划的过程"
    > **“Talk is cheap. Show me the code.”** — Linus Torvalds
    EOF
    ```
-
    {% endraw %}
 
 5. **创建归档页面**
 
    {% raw %}
-
    ```bash
    cat > archive.md << 'EOF'
    ---
@@ -474,7 +467,6 @@ excerpt: "记录我作为游戏服务器开发者开始C++学习计划的过程"
    {% endfor %}
    EOF
    ```
-
    {% endraw %}
 
 6. **创建关于页面**
